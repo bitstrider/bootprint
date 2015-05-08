@@ -18,11 +18,11 @@ get_header(); ?>
 	
 	<section id="frontpage" class="site-section">
 		<div class="container-fluid" role="banner">
-			<div class="col-md-12 frontpage-image">
-				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
-				if ($image) : ?>
-				    <img src="<?php echo $image[0]; ?>" alt="" />
-				<?php endif; ?> 
+			<div class="col-md-12">
+				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
+				<div class="row">
+					<div class="col-md-12 frontpage-image" style="background-image:url(<?php echo $image ? $image[0] : ""; ?>)"></div>
+				</div>
 
 				<?php /* The loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
