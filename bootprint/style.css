@@ -1,0 +1,91 @@
+/*
+Theme Name: BootPrint Starter
+Theme URI: http://callmejay.com/bootprint
+Author: Jason Yung
+Author URI: http://callmejay.com
+Description: a super simple BootStrap3 theme
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: bootprint
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+header.site-header, footer.site-footer {
+	background:#dde;
+}
+
+.navbar-nav {
+	padding: 30px;
+	font-size:20px;
+	text-transform:uppercase;
+	float:right;
+}
+
+#blog .entry-meta span{ margin-left:10px; }
+#blog .entry-meta span:first-of-type{ margin-left:0px; }
+
+#blog .entry-thumbnail {
+	float:right;
+	padding:5px;
+}
+#blog .entry-content {
+	padding:5px;
+	padding-left:0px;
+}
+#blog article {
+	margin-bottom:40px;
+}
+#blog .row:last-of-type {
+	border-top:2px solid #eee;
+	padding:20px;
+	margin-bottom:40px;
+	text-align: center
+}
+#blog .row:last-of-type > article {
+	/* center last row */
+	float: none;
+	margin-bottom:10px;
+	display:inline-block;
+	text-align: left;
+}
+
+img.header-image{
+	width: 80px;
+	margin: 10px;
+}
+@media (max-width: 992px) { /* shrink nav for xs, sm*/
+	.navbar-nav {
+		font-size:16px;
+	}
+	.navbar-toggle{
+		padding: 20px;
+  		margin: 20px;
+  	}
+}
+.footer-sidebars {
+	margin-bottom:20px;
+}
+
+.footer-sidebar.pull-right {
+	text-align: right;
+}
+.footer-sidebar ul {
+	list-style-type: none;
+}
+
+
+/* Bootstrap Essentials */
+/*.col-centered{
+	float: none;
+	margin: 0 auto;
+}*/
+

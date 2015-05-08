@@ -1,0 +1,249 @@
+/*
+ Theme Name:   BootPrint Starter (callmejay.com)
+ Theme URI:    http://callmejay.com/bootprint
+ Description:  BootPrint Child Theme
+ Author:       Jason Yung
+ Author URI:   http://callmejay.com/
+ Template:     bootprint
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  bootprint-child
+*/
+
+
+.row-centered {text-align:center;}
+.row-centered .col-centered {float:none;text-align:left;display:inline-block;}
+.row-centered .col-centered {
+	/* this rule patches the issue with centered col using up extra space for some reason, disrupting the bootstrap grid layout*/
+	margin-left: -1.5px;
+	margin-right: -1.5px;
+}
+.row-overlapped {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.divider {
+  	text-align: center;
+  	border-top: 3px solid black;
+  	background:white;
+  	height: 0px;
+  	margin-top: 40px;
+  	margin-bottom: 30px;
+}
+.divider > h1 {
+  position: relative;
+  top: -40px;
+  background: white;
+  display: inline-block; /* the most important attribute*/
+  padding-left: 20px;
+  padding-right: 20px;	
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.thumb-box, .thumb-box > img {width:100%;}
+.thumb-box.shrink {
+	padding:0;
+	-moz-transition: padding .3s linear;
+	-webkit-transition: padding .3s linear;
+	-o-transition: padding .3s linear;
+	transition: padding .3s linear;
+}
+.thumb-box.shrink:hover{
+	padding:40px;
+}
+
+.thumb-box.tint {
+	position: relative;
+	float: left;
+	cursor: pointer;
+}
+.thumb-box.tint:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: none;
+	-moz-transition: background .3s ease-out;
+	-webkit-transition: background .3s ease-out;
+	-o-transition: background .3s ease-out;
+	transition: background .3s ease-out;
+
+	border-radius:0;
+}
+
+.thumb-box.tint:hover:before {
+	background: rgba(0,0,0, 0.7);
+}
+.thumb-box.circlize:before {
+	border-radius:0;
+	-webkit-transition: border-radius .3s ease-in-out;
+	transition: border-radius .3s ease-in-out;
+}
+
+.thumb-box.circlize:hover:before {
+	border-radius:200px;
+}
+.thumb-box .icon {
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	color:transparent;
+	-moz-transition: color .3s linear;
+	-webkit-transition: color .3s linear;
+	-o-transition: color .3s linear;
+	transition: color .3s linear;
+
+}
+.thumb-box:hover .icon {
+	color:white;
+}
+
+
+.section-header {
+  margin-bottom:20px;
+}
+.navbar {
+	margin-bottom:0;
+}
+
+#frontpage {background:black;color:#ddd;}
+#frontpage .container-fluid, #frontpage .frontpage-image {padding:0;}
+#frontpage .frontpage-image > img {width:100%;}
+
+#frontpage .divider {
+  	border-top: 3px solid white;
+  	background:black;	
+}
+#frontpage .divider > h1 {
+  	background:black;
+}
+#frontpage .entry-title {
+	font-size: 42px;
+	text-transform: uppercase;
+	text-align: center;
+	text-shadow: 1px 1px 1px #777;	
+	color: white;
+}
+#frontpage .entry-content {	
+    text-align: left;
+    font-size: 18px;
+}
+#frontpage .entry-content p { padding:15px;}
+#frontpage .entry-meta {clear:both;}
+
+#skills, #skills .entry-title {background:#eee;}
+#skills .entry-header {text-align: center;}
+#skills .entry-content {
+	padding: 10px 20px;
+	font-size: 18px;
+	height:200px;
+	text-align:center;
+}
+@media (max-width: 1200px) {
+	#skills .entry-content {
+		padding: 10px 10px;
+		font-size: 16px;
+	}
+}
+@media (max-width: 992px) {
+	#skills .entry-content {
+		height:160px;
+	}
+}
+@media (max-width: 512px) {
+	#skills .entry-content {
+	  font-size: 14px;
+	}
+}
+
+#projects {background:white;}
+#projects .row article, #skills .row article {
+	padding-left: 5px;
+ 	padding-right: 5px;
+}
+/*#projects .entry-content {
+	font-size: 16px;
+	font-style: italic;
+}*/
+#projects .thumb-box .icon i.glyphicon {
+	font-size:16px;
+	margin-left:-8px;
+	margin-top:-8px;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+}
+
+#projects .thumb-box .icon i.glyphicon {
+	font-size:40px;
+	margin-left:-20px;
+	margin-top:-20px;
+}
+
+/* responsive flat buttons */
+/* .navbar-inverse {
+    background: black;
+    border-color: #ddd;
+}
+@media (max-width: 768px) {
+	.navbar-inverse {
+	  	padding: 10px 1%;
+	}
+	.navbar-inverse .navbar-header img {
+		border-radius: 25px;
+		width: 50px;
+		height: 50px;
+		margin-left:5px;
+	}
+}
+@media (min-width: 768px) {
+	.navbar-inverse {
+	  	padding: 20px 1%;
+	}
+	.navbar-inverse .navbar-header img {
+		border-radius: 50px;
+		width: 100px;
+		height: 100px;
+	}
+
+	.navbar-inverse .navbar-nav > li > a,
+	.navbar-inverse .navbar-nav > li > a:visited {
+		color:white;
+		font-size:20px;
+	    border-bottom: 4px white solid;
+		transition: 0.2s ease-out;
+	}
+
+	.navbar-inverse .navbar-nav > li > a:hover,
+	.navbar-inverse .navbar-nav > li > a:focus {
+	    color: #888;
+	    padding: 15px 10px 5px 10px;
+	    margin: 0 5px;
+		border-bottom-width: 8px;
+	}
+
+	.navbar-inverse .navbar-nav > .active > a,
+	.navbar-inverse .navbar-nav > .active > a:hover,
+	.navbar-inverse .navbar-nav > .active > a:focus {
+		color:#f00;
+		border-bottom-color:#f00;
+	}
+
+	.navbar-inverse .navbar-nav {
+		height:54px;
+		padding: 25px 3%;	
+	}
+	.navbar-inverse .navbar-nav > li {
+		height:100%;
+	}
+}*/
